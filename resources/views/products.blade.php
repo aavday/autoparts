@@ -45,23 +45,23 @@
             <table class="my-8 table bg-white rounded-lg shadow">
                 <thead class="font-bold">
                     <tr>
-                        <td>Name</td>
-                        <td>Category</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Description</td>
-                        <td>Add to cart</td>
+                        <td class="whitespace-nowrap pl-4 p-2">Name</td>
+                        <td class="whitespace-nowrap p-2">Category</td>
+                        <td class="whitespace-nowrap p-2">Price</td>
+                        <td class="whitespace-nowrap p-2">Quantity</td>
+                        <td class="whitespace-nowrap p-2">Description</td>
+                        <td class="whitespace-nowrap pr-4 p-2">Add to cart</td>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->category->name }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->quantity }}</td>
-                        <td>{{ $product->description }}</td>
-                        <td class="text-center text-5xl font-bold text-green-600">
+                        <td class="pl-4 p-2">{{ $product->name }}</td>
+                        <td class="p-2">{{ $product->category->name }}</td>
+                        <td class="p-2">{{ $product->price }}</td>
+                        <td class="p-2">{{ $product->quantity }}</td>
+                        <td class="p-2">{{ $product->description }}</td>
+                        <td class="pr-4 p-2 text-center text-5xl font-bold text-green-600">
                             <button type="button" wire:click="addToCart({{ $product->id }})">+</button>
                         </td>
                     </tr>

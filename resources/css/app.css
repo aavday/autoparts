@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.table td {
-    padding: 10px 20px;
-}
-
 .table tbody tr {
     background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
