@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.table {
-    margin: 30px 0;
-}
-
 .table td {
-    padding: 10px;
-    border: 1px solid #000;
+    padding: 10px 20px;
 }
 
-.table thead {
-    font-weight: bold;
-    font-size: 18px;
+.table tbody tr {
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+
+.table tr:nth-child(2n) {
+    background-color: #fff;
 }
 
 .plus {

@@ -31,7 +31,7 @@ class Products extends Component
             ->when($this->categoryId, fn ($query, $categoryId) => $query->where('category_id', $categoryId))
             ->orderBy($this->sortColumn, $this->sortDirection)
             ->get();
-        return view('livewire.products');
+        return view('products');
     }
 
     public function setFilterCategory(int $categoryId): void
