@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Support\Carbon;
 
-class Product extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -17,15 +17,18 @@ class Product extends Model
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'category_id',
-        'description',
-        'price',
-        'quantity'
+        'user_id',
+        'total_amount',
+        'shipment_address',
     ];
 
-    public function category(): HasOne
+    public function user(): HasOne
     {
-        return $this->hasOne(Category::class, 'id', 'category_id');
+        return $this->hasOne(User::class);
+    }
+
+    public function products(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class);
     }
 }
